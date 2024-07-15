@@ -28,11 +28,6 @@
       media="screen"
       href="CSS/reset.css"
     />
-    <!-- 
-    Нормальное отображение при "min-width: 1380px".
-    Необходимо добавлять дополнительный уровень т.к. текст наплывает на картинки заданные через position: absolute.
-    А также мало места для некоторых блоков.
-     -->
     <link
       rel="stylesheet"
       type="text/css"
@@ -42,13 +37,13 @@
     <link
       rel="stylesheet"
       type="text/css"
-      media="screen and (min-width: 481px) and (max-width: 991px)"
+      media="screen and (min-width: 481px) and (max-width: 992px)"
       href="CSS/tablet.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
-      media="screen and (max-width: 480px)"
+      media="screen and (max-width: 481px)"
       href="CSS/mobile.css"
     />
   </head>
@@ -57,9 +52,8 @@
       <div class="header-top">
         <div class="header-top-content">
           <div class="header-top-content-left">
-            <a href="#">
+            <a class="header-top-content-left-img" href="#">
               <img
-                class="header-top-content-left-img"
                 src="Images/logo.svg"
                 alt="Москоский инновационный кластер"
               />
@@ -97,16 +91,67 @@
                 <p class="ps-16px">Кластер &#171;Ломоносов&#187;</p>
               </div>
             </a>
-            <a class="header-top-content-right-auth font-medium" href="#">
-              <div>
-                <p class="ps-16px">Авторизация</p>
+            <div class="header-top-content-right-auth-wrapper">
+              <a class="header-top-content-right-auth font-medium" href="#">
+                <div>
+                  <p class="ps-16px">Авторизация</p>
+                </div>
+                <img
+                  class="header-top-content-right-auth-img"
+                  src="Images/user.svg"
+                  alt="Пользователь"
+                />
+              </a>
+              <div class="dropdown">
+                <button class="dropbtn">&equiv;</button>
+                <div class="dropdown-content">
+                  <a class="font-medium" href="#">
+                    <div class="top-line"></div>
+                    <div>
+                      <p class="ps-16px">Организациям и ИП</p>
+                    </div>
+                    <div class="bottom-line"></div>
+                  </a>
+                  <a class="font-medium" href="#">
+                    <div class="top-line"></div>
+                    <div>
+                      <p class="ps-16px">Физическим лицам</p>
+                    </div>
+                    <div class="bottom-line"></div>
+                  </a>
+                  <a class="font-medium" href="#">
+                    <div>
+                      <p class="ps-16px">Кластер &#171;Ломоносов&#187;</p>
+                    </div>
+                  </a>
+                  <div class="menu-sector"></div>
+                  <a class="font-regular" href="#">
+                    <div><p class="ps-16px">Инвестиции</p></div>
+                  </a>
+                  <a class="font-regular" href="#">
+                    <div><p class="ps-16px">Спрос и кооперация</p></div>
+                  </a>
+                  <a class="font-regular" href="#">
+                    <div><p class="ps-16px">Поддержка стартапов</p></div>
+                  </a>
+                  <a class="font-regular" href="#">
+                    <div><p class="ps-16px">Гранты</p></div>
+                  </a>
+                  <a class="font-regular" href="#">
+                    <div><p class="ps-16px">Инфраструктура</p></div>
+                  </a>
+                  <a class="font-regular" href="#">
+                    <div><p class="ps-16px">Патентование</p></div>
+                  </a>
+                  <a class="font-regular" href="#">
+                    <div><p class="ps-16px">Проекты для мегаполиса</p></div>
+                  </a>
+                  <a class="font-regular" href="#">
+                    <div><p class="ps-16px">О Кластере</p></div>
+                  </a>
+                </div>
               </div>
-              <img
-                class="header-top-content-right-auth-img"
-                src="Images/user.svg"
-                alt="Пользователь"
-              />
-            </a>
+            </div>
           </div>
         </div>
       </div>
@@ -169,11 +214,6 @@
     <main>
       <section class="section-1">
         <div class="section-1-card">
-          <img
-            class="section-1-card-img"
-            src="Images/venture-credit.svg"
-            alt="Венчурный кредит"
-          />
           <div class="section-1-card-info">
             <div class="section-1-card-info-text">
               <div class="section-1-card-info-text-title font-medium">
@@ -219,6 +259,11 @@
                 </div>
                 <div class="section-1-card-info-number-body">
                   <div
+                    class="section-1-card-info-number-body-text-1 mobile-visible font-medium"
+                  >
+                    <p>от</p>
+                  </div>
+                  <div
                     class="section-1-card-info-number-body-text-2 font-demibold"
                   >
                     <p>3%</p>
@@ -231,10 +276,22 @@
                 </div>
               </div>
               <div class="section-1-card-info-number-3">
-                <div class="section-1-card-info-number-title font-medium">
+                <div
+                  class="section-1-card-info-number-title mobile-not-visible font-medium"
+                >
                   <p class="ps-16px">На срок до</p>
                 </div>
+                <div
+                  class="section-1-card-info-number-title mobile-visible font-medium"
+                >
+                  <p class="ps-16px">На срок</p>
+                </div>
                 <div class="section-1-card-info-number-body">
+                  <div
+                    class="section-1-card-info-number-body-text-1 mobile-visible font-medium"
+                  >
+                    <p>до</p>
+                  </div>
                   <div
                     class="section-1-card-info-number-body-text-2 font-demibold"
                   >
@@ -257,13 +314,26 @@
               </a>
             </div>
           </div>
+          <img
+            class="section-1-card-img"
+            src="Images/venture-credit.svg"
+            alt="Венчурный кредит"
+          />
         </div>
       </section>
       <section class="section-2">
         <img class="img-plus" src="Images/plus.svg" alt="Плюс" />
         <div class="section-2-top">
-          <div class="section-2-top-title font-medium">
-            <p>Льготные кредиты на инвестиционные цели для субъектов МСП</p>
+          <div class="section-2-top-info">
+            <div class="section-2-top-info-title font-medium">
+              <p>Льготные кредиты на инвестиционные цели для субъектов МСП</p>
+            </div>
+            <div class="section-2-top-info-text font-regular">
+              <p>
+                — это мера финансовой поддержки, реализуемая Правительством
+                Москвы совместно с Корпорацией МСП.
+              </p>
+            </div>
           </div>
           <div class="section-2-top-body">
             <div class="section-2-top-body-left">
@@ -291,7 +361,10 @@
                     <div
                       class="section-2-top-body-left-partner-text-1 font-medium"
                     >
-                      <p>МСП Банк и Корпорация МСП</p>
+                      <p>
+                        МСП Банк<br class="desk-br-d-none-max" />
+                        и Корпорация МСП
+                      </p>
                     </div>
                     <div
                       class="section-2-top-body-left-partner-text-2 font-regular"
@@ -332,7 +405,10 @@
                     <div
                       class="section-2-top-body-right-block-block-title font-medium"
                     >
-                      <p>Льготная ставка в<br />рамках программы</p>
+                      <p>
+                        Льготная ставка <br class="desk-br-d-none-min" />
+                        в рамках программы
+                      </p>
                     </div>
                     <div class="section-2-top-body-right-block-block-info">
                       <div
@@ -406,7 +482,11 @@
           <div class="section-2-bottom-options">
             <div class="section-2-bottom-option">
               <div class="section-2-bottom-option-img">
-                <img src="Images/gears.svg" alt="Шестеренки" />
+                <img
+                  class="section-2-bottom-option-img-1"
+                  src="Images/gears.svg"
+                  alt="Шестеренки"
+                />
               </div>
               <div class="section-2-bottom-option-text font-regular">
                 <p>Модернизацию и расширение производства</p>
@@ -414,15 +494,23 @@
             </div>
             <div class="section-2-bottom-option">
               <div class="section-2-bottom-option-img">
-                <img src="Images/shopping-cart.svg" alt="Продуктовая тележка" />
+                <img
+                  class="section-2-bottom-option-img-2"
+                  src="Images/shopping-cart.svg"
+                  alt="Продуктовая тележка"
+                />
               </div>
               <div class="section-2-bottom-option-text font-regular">
-                <p>Покупку нового оборудования</p>
+                <p>Приобретение нового оборудования</p>
               </div>
             </div>
             <div class="section-2-bottom-option">
               <div class="section-2-bottom-option-img">
-                <img src="Images/deal.svg" alt="Сделка" />
+                <img
+                  class="section-2-bottom-option-img-3"
+                  src="Images/deal.svg"
+                  alt="Сделка"
+                />
               </div>
               <div class="section-2-bottom-option-text font-regular">
                 <p>Приобретение производственных площадей</p>
@@ -437,11 +525,6 @@
           <p>Кто может получить кредит на льготных условиях</p>
         </div>
         <div class="section-3-card">
-          <img
-            class="section-3-card-img"
-            src="Images/document.svg"
-            alt="Документ"
-          />
           <div class="section-3-card-info">
             <div class="section-3-card-info-block-1">
               <div class="section-3-card-info-block-1-title font-medium">
@@ -465,8 +548,10 @@
               <div class="section-3-card-info-block-2-text font-regular">
                 <p>
                   Все участники Реестра могут получить льготный кредит
-                  <b>вне зависимости от сферы деятельности</b> при соответствии
-                  основным требованиям для заемщиков.
+                  <b class="tablet-b-f-w-normal"
+                    >вне зависимости от сферы деятельности</b
+                  >
+                  при соответствии основным требованиям для заемщиков.
                 </p>
               </div>
             </div>
@@ -475,6 +560,13 @@
                 <p>Подробнее о Реестре</p>
               </a>
             </div>
+          </div>
+          <div class="section-3-card-img-wrapper">
+            <img
+              class="section-3-card-img"
+              src="Images/document.svg"
+              alt="Документ"
+            />
           </div>
         </div>
       </section>
